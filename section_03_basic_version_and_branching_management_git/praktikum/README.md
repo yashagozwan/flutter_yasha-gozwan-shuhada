@@ -34,5 +34,18 @@ git commit -m "Menambahkan variable name"
 git push origin featureA
 ```
 
+Membuat branch baru dari development dengan nama branch featureB kita synchronize dengan branch featureA dengan menggunakan perintal pull
+```Bash
+  git checkout -b featureB
+  git pull origin featureA
+```
+![alt](../screenshot/part_06.png)
 
+Menambahkan variable age
+```dart
+void main() {
+  String name = 'Yasha Gozwan Shuhada';
+  int age = 26;
+}
 
+```
