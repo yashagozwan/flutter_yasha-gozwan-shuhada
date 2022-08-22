@@ -49,3 +49,8 @@ void main() {
 }
 
 ```
+
+Menambahkan function sayHello
+```dart
+void sayHello() => print('Hello World');
+```
