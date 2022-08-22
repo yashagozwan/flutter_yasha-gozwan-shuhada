@@ -4,3 +4,5 @@ void main() {
 }
 
 void sayHello() => print('Hello World');
+
+void add() => print(1 + 1);
