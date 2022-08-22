@@ -69,3 +69,51 @@ Memindahkan ke stash area untuk kita pindahkan ke branch yang benar
 
 Kita pindahkan ke branch yang benar
 ![alt](../screenshot/part_09.png)
+
+Kita implemetasi merge branch featureA dan featureB di branch development dan merge juga development di branch master
+Merge development <- featureA
+![image](../screenshot/part_10.png)
+
+Merge development <- featureB
+![alt](../screenshot/part_11.png)
+
+Merge master <- development
+![alt](./../screenshot/part_12.png)
+
+Kita implemetasi conflict
+kita membuat file person di branch featureA
+```dart
+class Person {
+  String? name;
+  int? age;
+  String? email;
+}
+```
+
+kita membuat file person di branch featureB
+```dart
+class Person {
+  String? name;
+  int? age;
+}
+```
+
+kita akan merge branch featureA dan featureB dari branch development dan akan terjadi conflict karena file di branch tersebut sama.
+![alt](../screenshot/part_13.png)
+
+Kita perbaiki menjadi seperti ini.
+![alt](../screenshot/part_14.png)
+
+Lalu kita kirim ke github
+```
+git add .
+git commit -m "merge featureA dan featureB"
+git push origin development
+```
+
+kita merge development ke master
+```
+git checkout master
+git merge --no-ff development
+git push origin master
+```
