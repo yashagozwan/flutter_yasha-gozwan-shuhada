@@ -54,3 +54,18 @@ Menambahkan function sayHello
 ```dart
 void sayHello() => print('Hello World');
 ```
+
+Ketika kita ada perubahkan dan kita salah mengerjakan di file yang tidak seharus nya. Kita bisa menggunakan git stash
+```Bash
+git status
+git stash
+git stash apply
+```
+Melihat perubahan di file
+![alt](../screenshot/part_07.png)
+
+Memindahkan ke stash area untuk kita pindahkan ke branch yang benar
+![alt](../screenshot/part_08.png)
+
+Kita pindahkan ke branch yang benar
+![alt](../screenshot/part_09.png)
