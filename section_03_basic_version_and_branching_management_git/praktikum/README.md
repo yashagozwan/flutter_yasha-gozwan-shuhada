@@ -69,3 +69,13 @@ Memindahkan ke stash area untuk kita pindahkan ke branch yang benar
 
 Kita pindahkan ke branch yang benar
 ![alt](../screenshot/part_09.png)
+
+Kita implemetasi merge branch featureA dan featureB di branch development dan merge juga development di branch master
+Merge development <- featureA
+![image](../screenshot/part_10.png)
+
+Merge development <- featureB
+![alt](../screenshot/part_11.png)
+
+Merge master <- development
+![alt](./../screenshot/part_12.png)
