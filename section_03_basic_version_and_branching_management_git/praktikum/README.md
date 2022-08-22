@@ -79,3 +79,41 @@ Merge development <- featureB
 
 Merge master <- development
 ![alt](./../screenshot/part_12.png)
+
+Kita implemetasi conflict
+kita membuat file person di branch featureA
+```dart
+class Person {
+  String? name;
+  int? age;
+  String? email;
+}
+```
+
+kita membuat file person di branch featureB
+```dart
+class Person {
+  String? name;
+  int? age;
+}
+```
+
+kita akan merge branch featureA dan featureB dari branch development dan akan terjadi conflict karena file di branch tersebut sama.
+![alt](../screenshot/part_13.png)
+
+Kita perbaiki menjadi seperti ini.
+![alt](../screenshot/part_14.png)
+
+Lalu kita kirim ke github
+```
+git add .
+git commit -m "merge featureA dan featureB"
+git push origin development
+```
+
+kita merge development ke master
+```
+git checkout master
+git merge --no-ff development
+git push origin master
+```
