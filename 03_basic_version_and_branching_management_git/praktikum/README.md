@@ -117,3 +117,8 @@ git checkout master
 git merge --no-ff development
 git push origin master
 ```
+
+### Network graph.
+![alt](../screenshot/part_15.png)
+### Git Graph
+![alt](../screenshot/part_16.png)
