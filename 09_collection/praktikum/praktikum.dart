@@ -3,6 +3,7 @@ void main() {
   taskTwo();
 }
 
+// task 1
 void taskOne() async {
   List<int> result = await multiplyNumbers([3, 2, 1], 5);
   print(result);
@@ -18,6 +19,7 @@ Future<List<int>> multiplyNumbers(List<int> numbers, int multiplyBy) {
   });
 }
 
+// task 2
 void taskTwo() {
   Map<String, List<String>> order1 = {
     'ordersId': ['123', '124', '423'],
