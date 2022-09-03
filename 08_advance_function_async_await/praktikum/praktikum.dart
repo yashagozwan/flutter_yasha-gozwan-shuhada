@@ -1,5 +1,5 @@
 void main() {
-  taskOne();
+  // taskOne();
   taskTwo();
 }
 
@@ -21,17 +21,39 @@ Future<List<int>> multiplyNumbers(List<int> numbers, int multiplyBy) {
 
 // task 2
 void taskTwo() {
-  Map<String, List<String>> order1 = {
-    'ordersId': ['123', '124', '423'],
-    'ordersName': ['Mouse', 'Keyboard', 'keycaps'],
-  };
+  var orders = [
+    [
+      'ordersId',
+      ['001', '002', '003']
+    ],
+    [
+      'ordersItem',
+      ['Mouse', 'Keycaps', 'Keychron']
+    ],
+  ];
 
-  Map<String, List<String>> order2 = {
-    'ordersId': ['221', '443', '543'],
-    'ordersName': ['JavaScript', 'Dart', 'Kotlin'],
-  };
+  var ordersMap = {};
 
-  List<Map<String, List<String>>> orders = [order1, order2];
+  for (int i = 0; i < orders.length; i++) {
+    ordersMap.addAll({orders[i][0]: orders[i][1]});
+  }
 
-  print(orders);
+  print(ordersMap);
+
+  var friends = [
+    ['123', 'Gon'],
+    ['321', 'Killua'],
+    ['455', 'Yahoo'],
+  ];
+
+  var person = {};
+
+  int i = 1;
+  for (var friend in friends) {
+    person.addEntries({
+      "person${i++}": {"id": friend[0], "name": friend[1]}
+    }.entries);
+  }
+
+  person.forEach(((_, value) => print(value)));
 }
