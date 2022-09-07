@@ -5,18 +5,24 @@ class Mobil {
   List<Hewan> muatan = [];
 
   void tambahMuatan(Hewan hewan) {
-    if (kapasitas > hewan.berat) {
+    var totalKapasitas = totalMuatan();
+    if (kapasitas > totalKapasitas) {
       muatan.add(hewan);
     } else {
       print('Maaf maksimal berat muatan $kapasitas kg');
     }
   }
 
-  void totalMuatan() {
+  double totalMuatan() {
     double totalBerat = 0;
+
     for (Hewan hewan in muatan) {
       totalBerat += hewan.berat;
     }
-    print('Total berat semua hewan di dalam mobil $totalBerat kg');
+    return totalBerat;
+  }
+
+  void totalSemuaMuatan() {
+    print('Total berat semua hewan di dalam mobil ${totalMuatan()} kg');
   }
 }

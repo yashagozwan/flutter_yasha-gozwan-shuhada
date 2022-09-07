@@ -9,12 +9,14 @@ void main() {
   Hewan sapi = Hewan()..berat = 40.0;
   Hewan dog = Hewan()..berat = 3.9;
 
-  Mobil mobil = Mobil();
+  Mobil mobil = Mobil()..kapasitas = 100;
+
   mobil.tambahMuatan(burung);
   mobil.tambahMuatan(kucing);
   mobil.tambahMuatan(ikan);
   mobil.tambahMuatan(ayam);
   mobil.tambahMuatan(sapi);
   mobil.tambahMuatan(dog);
-  mobil.totalMuatan();
+
+  mobil.totalSemuaMuatan();
 }
