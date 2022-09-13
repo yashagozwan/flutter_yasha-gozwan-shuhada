@@ -8,7 +8,7 @@ class KelipatanPersekutuanTerkecil implements Matematika {
   KelipatanPersekutuanTerkecil(this.x, this.y) {
     c = x * y;
 
-    for (int i = 1; i < c; i++) {
+    for (int i = 1; i <= c; i++) {
       a = i % x;
       b = i % y;
 
