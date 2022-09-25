@@ -1,3 +1,3 @@
-# Weekly 1
+# Weekly 2
 ## Preview Project
-<img src="https://res.cloudinary.com/dfeenbdhb/image/upload/v1664043866/alterra_gif/task_weekly_1_nhiho2.jpg">
+<img src="https://res.cloudinary.com/dfeenbdhb/image/upload/v1664101661/tasks-app/task_weekly_2_h7sx4w.jpg">

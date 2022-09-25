@@ -12,6 +12,7 @@ class SectionTwo extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 32),
           child: Text(
             'Kamu bisa mendapatkan profesi baru',
+            textAlign: TextAlign.center,
             style: TextStyle(
               fontSize: 24,
               fontWeight: FontWeight.w600,
