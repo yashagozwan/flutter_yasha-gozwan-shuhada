@@ -1,0 +1,6 @@
+# 19 Dialog Bottom Sheet
+## Summary
+Di materi ini saya telah belajar tenang penggunaan widget yang penting:
+- AlertDialog adalah widget untuk melakukan konfirmasi seperti ketika kita ingin menghapus item yang ada dalam list. Contoh nya kita mempunyai task app ketika kita membuat beberapa task. Lalu salah satu task nya ingin kita hapus. Alangkah baik nya ada konfirmasi terlebih dahulu ketika kita ingin mengapus nya. Dengan AlertDialog mesalah itu bisa teratasi.
+- BottomSheet adalah widget untuk menampilkan widget seperti AlertDialog tetapi BottomSheet tidak mempunyai actions dan posisi view nya ada di bagain bawah. Widget ini sangat penting ketika kita ingin menampilkan View tetapi view nya hanya tampil ketika kita ingin tampilkan saja seperti view yang di sembunyikan.
+- Provider adalah state management walaupun di video pembelajan di bahas hanya sedikit tetapi materi tentang provider sangatlah penting karena kita tidak lagi menyimpan data nya di property Stateful atau Stateless tetapi kita menyimpan datanya di Provider.
