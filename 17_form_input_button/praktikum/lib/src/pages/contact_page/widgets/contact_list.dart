@@ -1,41 +1,23 @@
-import 'dart:convert';
 import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import '../../contact_detail_page/contact_detail_page.dart';
 import '../../../models/contact_model.dart';
 import 'contact_item.dart';
 
-class ContactList extends StatefulWidget {
-  const ContactList({Key? key}) : super(key: key);
+class ContactList extends StatelessWidget {
+  final List<ContactModel> contacts;
 
-  @override
-  State<ContactList> createState() => _ContactListState();
-}
-
-class _ContactListState extends State<ContactList> {
-  final _contacts = <ContactModel>[];
-
-  Future<void> _setContact() async {
-    final response = await rootBundle.loadString('assets/data/contacts.json');
-    final rawContacts = jsonDecode(response) as List;
-    final contacts =
-        rawContacts.map((contact) => ContactModel.fromJson(contact)).toList();
-    setState(() => _contacts.addAll(contacts));
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    _setContact();
-  }
+  const ContactList({
+    Key? key,
+    required this.contacts,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      itemCount: _contacts.length,
+      itemCount: contacts.length,
       itemBuilder: (BuildContext context, int index) {
-        final contact = _contacts[index];
+        final contact = contacts[index];
         final color = _getColor();
         return Stack(
           children: [

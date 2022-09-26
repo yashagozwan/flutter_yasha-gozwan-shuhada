@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:praktikum/src/models/contact_model.dart';
 
 class ContactAddPage extends StatefulWidget {
   const ContactAddPage({Key? key}) : super(key: key);
@@ -10,6 +11,29 @@ class ContactAddPage extends StatefulWidget {
 class _ContactAddPageState extends State<ContactAddPage> {
   String _name = "";
   String _phone = "";
+
+  final _nameController = TextEditingController();
+  final _phoneController = TextEditingController();
+
+  @override
+  void initState() {
+    super.initState();
+
+    _nameController.addListener(() {
+      setState(() => _name = _nameController.text);
+    });
+
+    _phoneController.addListener(() {
+      setState(() => _phone = _phoneController.text);
+    });
+  }
+
+  @override
+  void dispose() {
+    _nameController.dispose();
+    _phoneController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -43,11 +67,7 @@ class _ContactAddPageState extends State<ContactAddPage> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 18),
               child: TextField(
-                onChanged: (String? value) {
-                  if (value != null) {
-                    setState(() => _name = value);
-                  }
-                },
+                controller: _nameController,
                 decoration: const InputDecoration(
                   border: OutlineInputBorder(),
                   label: Text('Full Name'),
@@ -58,11 +78,7 @@ class _ContactAddPageState extends State<ContactAddPage> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 18),
               child: TextField(
-                onChanged: (String? value) {
-                  if (value != null) {
-                    setState(() => _phone = value);
-                  }
-                },
+                controller: _phoneController,
                 decoration: const InputDecoration(
                   border: OutlineInputBorder(),
                   label: Text('Phone'),
@@ -77,7 +93,10 @@ class _ContactAddPageState extends State<ContactAddPage> {
                 width: double.infinity,
                 child: ElevatedButton(
                   onPressed: () {
-                    Navigator.pop(context);
+                    Navigator.pop(
+                      context,
+                      ContactModel(name: _name, phone: _phone),
+                    );
                   },
                   child: const Text('Submit'),
                 ),
