@@ -2,7 +2,7 @@
 
 ## Preview
 
-*Memanbahkan kontak ke state local (Stateful) dan menyimpan ke Global State (Provider).*
+*Menambahkan kontak ke state local (Stateful) dan menyimpan ke Global State (Provider).*
 <div>
     <img src="https://res.cloudinary.com/dfeenbdhb/image/upload/v1664392849/alterra_gif/21%20Flutter%20State%20Management%20Provider/001_21_iilwd9.gif" width="200" />
     <img src="https://res.cloudinary.com/dfeenbdhb/image/upload/v1664392850/alterra_gif/21%20Flutter%20State%20Management%20Provider/002_21_q9bvcu.gif" width="200" />
