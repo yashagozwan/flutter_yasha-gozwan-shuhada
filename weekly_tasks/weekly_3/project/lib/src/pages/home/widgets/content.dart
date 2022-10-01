@@ -14,6 +14,7 @@ class Content extends StatelessWidget {
       removeTop: true,
       context: context,
       child: ListView(
+        physics: const BouncingScrollPhysics(),
         children: const [
           Header(),
           SizedBox(height: 32),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:project/src/pages/user/user_screen.dart';
 
 class DrawerPro extends StatelessWidget {
   const DrawerPro({Key? key}) : super(key: key);
@@ -61,6 +62,21 @@ class DrawerPro extends StatelessWidget {
               ],
             ),
           ),
+          ListTile(
+            leading: const Icon(Icons.group),
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (_) {
+                return const UserScreen();
+              }));
+            },
+            title: const Text('User Data'),
+            trailing: IconButton(
+              onPressed: () {},
+              icon: const Icon(Icons.keyboard_arrow_right),
+              color: const Color(0xFF7067DA),
+            ),
+          ),
+          const Divider(),
           ListTile(
             leading: const Icon(Icons.contact_mail),
             title: const Text('Contact Us'),

@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:project/src/stores/course_store.dart';
+import 'package:provider/provider.dart';
 
-import '../model/course_model.dart';
+import '../../../model/course_model.dart';
 
 class SectionThree extends StatelessWidget {
   const SectionThree({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final courseStore = Provider.of<CourseStore>(context);
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 32),
       child: Column(
@@ -22,14 +25,14 @@ class SectionThree extends StatelessWidget {
             textAlign: TextAlign.center,
           ),
           const SizedBox(height: 16),
-          ..._courses(),
+          ..._renderCourseList(courseStore.courses),
         ],
       ),
     );
   }
 
-  List<Widget> _courses() {
-    return courseList.map((e) {
+  List<Widget> _renderCourseList(List<CourseModel> courses) {
+    return courses.map((e) {
       return Card(
         color: e.color,
         shape: RoundedRectangleBorder(

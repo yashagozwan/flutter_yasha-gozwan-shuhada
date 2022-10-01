@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:project/src/model/user_model.dart';
+import 'package:project/src/stores/user_store.dart';
+import 'package:provider/provider.dart';
 
 class SectionFour extends StatefulWidget {
   const SectionFour({Key? key}) : super(key: key);
@@ -15,6 +18,7 @@ class _SectionFourState extends State<SectionFour> {
 
   @override
   Widget build(BuildContext context) {
+    final userStore = Provider.of<UserStore>(context);
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 24),
       child: Column(
@@ -104,7 +108,7 @@ class _SectionFourState extends State<SectionFour> {
                 borderRadius: BorderRadius.circular(8),
               ),
             ),
-            onPressed: _showAlertDialog,
+            onPressed: () => _showAlertDialog(userStore),
             child: const Text('Submit'),
           ),
         ],
@@ -112,7 +116,7 @@ class _SectionFourState extends State<SectionFour> {
     );
   }
 
-  void _showAlertDialog() {
+  void _showAlertDialog(UserStore userStore) {
     showDialog(
       context: context,
       builder: (BuildContext context) {
@@ -178,6 +182,23 @@ class _SectionFourState extends State<SectionFour> {
                     Expanded(
                       child: ElevatedButton(
                         onPressed: () {
+                          // check data jika kosong data tidak akan di simpan.
+                          if (_firstNameController.text.isEmpty) return;
+                          if (_lastNameController.text.isEmpty) return;
+                          if (_emailController.text.isEmpty) return;
+                          if (_messageController.text.isEmpty) return;
+
+                          // Menambahkan data ke list
+                          final user = UserModel(
+                            firstName: _firstNameController.text,
+                            lastName: _lastNameController.text,
+                            email: _emailController.text,
+                            message: _messageController.text,
+                          );
+
+                          userStore.add(user);
+
+                          // Membersihkan semua text form field.
                           _firstNameController.clear();
                           _lastNameController.clear();
                           _emailController.clear();
